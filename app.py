@@ -15,13 +15,10 @@ from phoenix.otel import register
 if "phoenix_initialized" not in st.session_state:
     # Set environment variables to avoid port conflicts
     os.environ.setdefault("PHOENIX_GRPC_PORT", "0")  # Disable gRPC server
-    os.environ.setdefault("PHOENIX_PORT", "6006")  # Phoenix UI port
-    
+    os.environ.setdefault("PHOENIX_PORT", "6007")  # Phoenix UI port
+
     # Launch Phoenix UI with explicit configuration
-    st.session_state.phoenix_session = px.launch_app(
-        port=6006,
-        host="0.0.0.0"
-    )
+    st.session_state.phoenix_session = px.launch_app(port=6007, host="0.0.0.0")
 
     # Register tracer with auto-instrumentation
     tracer_provider = register(
@@ -172,10 +169,10 @@ with st.sidebar:
 
     # Phoenix Tracing section
     st.header("🔍 Phoenix Tracing")
-    st.info("Phoenix is running at http://localhost:6006")
+    st.info("Phoenix is running at http://localhost:6007")
     if st.button("📊 Open Phoenix UI", key="phoenix_btn"):
         st.markdown(
-            "[Click here to open Phoenix](http://localhost:6006)",
+            "[Click here to open Phoenix](http://localhost:6007)",
             unsafe_allow_html=True,
         )
 

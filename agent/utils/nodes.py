@@ -70,13 +70,19 @@ Focus on these metrics:
 
 Use any statistical or ML method you think is appropriate (you have full pandas and sklearn access).
 
-Provide a CONCISE analysis (max 4 sentences):
-1. How many anomalies did you find and what method did you use?
-2. What is the severity (Critical/High/Medium/Low) and why?
-3. What pattern do you see in the anomalies?
-4. What is your top recommendation?
+Be brief and actionable.
 
-Be brief and actionable."""
+this is referance output template and number may change:
+
+
+The distribution ranges from 1 to 99 , a difference of 98
+The average CPU Utilization(%) is 50.208
+Maximum total CPU Utilization(%) of 99 was observed on 10 Nov 2025, 7:00 PM , whereas the minimum total CPU Utilization(%) of 1 was observed on 3 different hours
+The total CPU Utilization(%) increased the most by 109.84% over the past 2 hours and dropped the most by 40.81% over the past 8 hours
+Highest hour-over-hour increase in total CPU Utilization(%) was observed on 05 Nov 2025, 3:00 AM ( 6,700% ) whereas hour-over-hour total CPU Utilization(%) declined the most on 01 Nov 2025, 9:00 PM by 98.96%
+Total CPU Utilization(%) remained above 74.604 throughout the period from 05 Nov 2025, 10:00 AM to 05 Nov 2025, 12:00 PM
+Total CPU Utilization(%) remained below 25.604 throughout the period from 03 Nov 2025, 5:00 AM to 03 Nov 2025, 7:00 AM
+"""
 
         # Run the agent
         response = agent.invoke({"input": query})
